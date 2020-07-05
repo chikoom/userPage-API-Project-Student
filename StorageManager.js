@@ -2,7 +2,6 @@ class StorageManager {
   constructor(){
     this.usersStorage = JSON.parse(localStorage.getItem('users')) || []
   }
-
   addToStorage = (userData) => {
     const user = userData.user
     if(user){

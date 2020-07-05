@@ -7,12 +7,6 @@ class Renderer {
       const HTML = template({ data:siteData[key] })
       $(`.${key}-container`).append(HTML)
     }
-
-    // const circleType = new CircleType(document.getElementById('simpsons-header'))
-    // circleType.radius(200)
-
-    // const circleType2 = new CircleType(document.getElementById('pokemon-header'))
-    // circleType2.radius(200)
   }
   renderUserSelect = storedUsers => {
     $('.saved-users').empty()
