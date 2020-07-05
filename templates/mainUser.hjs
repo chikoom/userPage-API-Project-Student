@@ -1,7 +1,0 @@
-<div class="user-image"></div>
-<div class="user-details">
-  <span class="user-name">{{mainUser.firstName}}</span>
-  <span class="user-lastname">{{mainUser.lastName}}</span>
-  <span class="user-city">{{mainUser.city}}</span>
-  <span class="user-state">{{mainUser.state}}</span>
-</div>

@@ -4,14 +4,12 @@ class APIManager {
     }
 
     loadAllData(){
-
       this.loadHeaderImage()
       this.loadUsersData()
       this.loadQuote()
       this.loadAbout()
       this.loadPokemon()
-      this.loadSimpsons()
-      
+      this.loadSimpsons()  
     }
 
     loadHeaderImage = () => {
@@ -34,10 +32,8 @@ class APIManager {
         url: 'https://randomuser.me/api/?results=7&inc=picture,name,location&nat=nl',
         dataType: 'json',
         success: data => {
-
           const resultsArray = data.results
-
-          this.data.mainUser = resultsArray.splice(0,1).reduce((newUser, oUser) => {
+          this.data.user = resultsArray.splice(0,1).reduce((newUser, oUser) => {
             newUser.firstName = oUser.name.first
             newUser.lastName = oUser.name.last
             newUser.city = oUser.location.city

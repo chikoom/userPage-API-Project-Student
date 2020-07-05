@@ -1,27 +1,19 @@
-
-const userSource = $("#user-template").html();
-const template = Handlebars.compile(userSource);
-
-
 class Renderer {
-  constructor(){
 
-  }
   renderScreen = (siteData) => {
+    for(let key of Object.keys(siteData)){
+      $(`.${key}-container`).empty()
+      const template = Handlebars.compile($(`#${key}-template`).html());
+      const HTML = template({ data:siteData[key] })
+      $(`.${key}-container`).append(HTML)
+    }
+    
+    const circleType = new CircleType(document.getElementById('simpsons-header'))
+    circleType.radius(200)
 
-    this.renderHeaderImage(siteData.headerImage)
-    this.renderUserContainer(siteData.mainUser)
+    const circleType2 = new CircleType(document.getElementById('pokemon-header'))
+    circleType2.radius(200)
 
-  }
-
-  renderHeaderImage = (imageUrl) => {
-    $(`.header-container`).empty()
-    $(`.header-container`).append(`<img src="${imageUrl}" alt="Header Image" />`)
-  }
-  
-  renderUserContainer = (mainUser) => {
-    $(`.user-container`).empty()
-    const userHTML = template({ mainUser })
-    $(`.user-container`).append(userHTML)
+    
   }
 }

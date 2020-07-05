@@ -13,68 +13,94 @@
 
   <body>
       <div class="container">
-
         <div class="buttons-container">	
           <button id="btn-load">Load User Data</button>	
           <button id="btn-display">Display User</button>
           <button id="btn-save">Save User</button>
           <select></select>
         </div>
-
-        <div class="header-container"></div>
-
+        <div class="headerImage-container"></div>
         <div class="content-container">
-
           <div class="main-container">
-
             <div class="user-container"></div>
-
             <div class="texts-container">
-
               <div class="quote-container"></div>
-
               <div class="about-container"></div>
-            
             </div>
-
-            <div class="favourites-container">
-            
-              <div class="pokemon-container"></div>
-
-              <div class="simpsons-container"></div>
-
+            <div class="favourites-container">            
+              <div class="pokemon-container favourites-inner"></div>
+              <div class="horizontal-divider"></div>
+              <div class="simpsons-container favourites-inner"></div>
             </div>
-
           </div>
-
-          <div class="friends-container">	
-            <h4>Friends</h4>	
-            <div class="friends-container-inner">	
-            </div>	
-          </div>
-          
-        </div>
-        
+          <div class="friends-container"></div>         
+        </div>      
       </div>
 
+      <!-- ABOUT TEXT TEMPLATE -->
+      <script id="about-template" type="text/x-handlebars-template">
+        <h3>About me:</h3>
+        <p class="about-text">{{data}}</p>
+      </script>
+
+      <!-- KANYE QOUTE TEMPLATE -->
+      <script id="quote-template" type="text/x-handlebars-template">
+        <p class="qoute-text">
+          <span class="qoutes">"</span>
+          {{data}}
+          <span class="qoutes">"</span></p>
+      </script>
+
+      <!-- FAVOURITE POKEMON TEMPLATE -->
+      <script id="pokemon-template" type="text/x-handlebars-template">
+        <h3 class="favourite-header" id="pokemon-header">Favourite Pokemon</h3>
+        <img class="favourite-image" src="{{data.image}}">
+        <h3 class="favourite-name">{{data.name}}</h3>
+      </script>
+
+      <!-- FAVOURITE SIMPSONS TEMPLATE -->
+      <script id="simpsons-template" type="text/x-handlebars-template">
+        <h3 class="favourite-header" id="simpsons-header">Favourite Simpsons</h3>
+        <img class="favourite-image" src="{{data.image}}">
+        <h3 class="favourite-name">{{data.name}}</h3>
+      </script>
+
+      <!-- HEADER IMAGE TEMPLATE -->
+      <script id="headerImage-template" type="text/x-handlebars-template">
+        <img src="{{data}}" alt="Header Image" />
+      </script>
+
+      <!-- USER DETAILS TEMPLATE -->
       <script id="user-template" type="text/x-handlebars-template">
         <div class="user-image-wrapper">
-          <img class="user-image" src="{{mainUser.image}}">
+          <img class="user-image" src="{{data.image}}">
         </div>
         <div class="user-details">
           <div class="user-name">
-            <span class="user-firstname">{{mainUser.firstName}}</span>
-            <span class="user-lastname">{{mainUser.lastName}}</span>
+            <span class="user-firstname">{{data.firstName}} {{data.lastName}}</span>
           </div>
           <div class="user-location">
-            <span class="user-city">{{mainUser.city}}</span>
-            <span class="user-state">{{mainUser.state}}</span>
+            <span class="user-city">{{data.city}}, {{data.state}}</span>
           </div>
         </div>
       </script>
 
+      <!-- FRIEND LIST TEMPLATE -->
+      <script id="friends-template" type="text/x-handlebars-template">
+        <h4>Friends</h4>	
+        <div class="friends-container-inner">	
+          {{#each data}}
+            <div class="friend-line">
+              <img class="friend-image" src="{{image}}">
+              <span class="friend-name">{{firstName}} {{lastName}}</span>
+            </div>
+          {{/each}}
+        </div>
+      </script>
 
+      <!-- SITE SCRIPTS -->
       <script src="./libs/jquery-3.5.1.js"></script>
+      <script src="./libs/circletype.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>  
       <script src="APIManager.js"></script>
       <script src="Renderer.js"></script>
