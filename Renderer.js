@@ -1,4 +1,8 @@
 
+const userSource = $("#user-template").html();
+const template = Handlebars.compile(userSource);
+
+
 class Renderer {
   constructor(){
 
@@ -6,6 +10,7 @@ class Renderer {
   renderScreen = (siteData) => {
 
     this.renderHeaderImage(siteData.headerImage)
+    this.renderUserContainer(siteData.mainUser)
 
   }
 
@@ -13,5 +18,10 @@ class Renderer {
     $(`.header-container`).empty()
     $(`.header-container`).append(`<img src="${imageUrl}" alt="Header Image" />`)
   }
-
+  
+  renderUserContainer = (mainUser) => {
+    $(`.user-container`).empty()
+    const userHTML = template({ mainUser })
+    $(`.user-container`).append(userHTML)
+  }
 }

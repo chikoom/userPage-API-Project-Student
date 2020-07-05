@@ -38,11 +38,11 @@ class APIManager {
           const resultsArray = data.results
 
           this.data.mainUser = resultsArray.splice(0,1).reduce((newUser, oUser) => {
-            newUser.firstName = oUser.name.first;
-            newUser.lastName = oUser.name.last;
-            newUser.city = oUser.location.city;
-            newUser.state = oUser.location.state;
-            newUser.image = oUser.picture.thumbnail;
+            newUser.firstName = oUser.name.first
+            newUser.lastName = oUser.name.last
+            newUser.city = oUser.location.city
+            newUser.state = oUser.location.state
+            newUser.image = oUser.picture.large
             return newUser;
           }, {});
           
@@ -51,7 +51,7 @@ class APIManager {
             this.data.friends.push({
               firstName:user.name.first,
               lastName:user.name.last,
-              image:user.picture.thumbnail
+              image:user.picture.medium
             })
           });
 
@@ -93,7 +93,7 @@ class APIManager {
     loadPokemon = () => {
       $.ajax({
         method: "GET",
-        url: `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 101)}`,
+        url: `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 100)+1}`,
         dataType: 'json',
         success: data => {
           this.data.pokemon = {
