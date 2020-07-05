@@ -2,4 +2,9 @@ const apiManager = new APIManager()
 
 
 
-apiManager.loadHeaderImage()
+apiManager.loadAllData()
+
+
+$('button').on('click', function(){
+  console.log(apiManager.getData())
+})
