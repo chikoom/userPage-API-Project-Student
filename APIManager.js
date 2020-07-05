@@ -9,6 +9,8 @@ class APIManager {
       this.loadUsersData()
       this.loadQuote()
       this.loadAbout()
+      this.loadPokemon()
+      this.loadSimpsons()
       
     }
 
@@ -80,8 +82,41 @@ class APIManager {
         url: 'https://baconipsum.com/api/?type=all-meat&paras=1',
         dataType: 'json',
         success: data => {
-          console.log(data)
           this.data.about = data[0]
+        },
+        error: (xhr, text, error) => {
+          console.log(`Error loading Quote - ${text}`)
+        }
+      })
+    }
+
+    loadPokemon = () => {
+      $.ajax({
+        method: "GET",
+        url: `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 101)}`,
+        dataType: 'json',
+        success: data => {
+          this.data.pokemon = {
+            name: data.name,
+            image: data.sprites.front_shiny
+          }
+        },
+        error: (xhr, text, error) => {
+          console.log(`Error loading Quote - ${text}`)
+        }
+      })
+    }
+
+    loadSimpsons = () => {
+      $.ajax({
+        method: "GET",
+        url: `https://thesimpsonsquoteapi.glitch.me/quotes`,
+        dataType: 'json',
+        success: data => {
+          this.data.simpsons = {
+            name: data[0].character,
+            image: data[0].image
+          }
         },
         error: (xhr, text, error) => {
           console.log(`Error loading Quote - ${text}`)
