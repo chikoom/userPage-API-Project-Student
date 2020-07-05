@@ -7,6 +7,8 @@
 body {
     background-color: #ecf0f1;
     font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /**
@@ -78,7 +80,6 @@ body {
     font-size: 1.2em;
     border-bottom: 1px solid #ddd;
 }
-
 /**
 ** FRIENDS
 **/
@@ -160,6 +161,21 @@ body {
     margin: 0 auto;
 }
 
+/**
+** BUTTONS
+**/
+button {
+    outline: 0;
+    border:0;
+    cursor: pointer;
+    background-color:#a9e8ce;
+    padding: 5px 10px;
+}
 
+button:hover {
+  background-color:#cef1e3;
+}
 
-
+button:active {
+  background-color:#a9e8ce;
+}
