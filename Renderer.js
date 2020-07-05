@@ -5,11 +5,13 @@ class Renderer {
   }
   renderScreen = (siteData) => {
 
-    this.renderHeaderImage(siteData)
+    this.renderHeaderImage(siteData.headerImage)
 
   }
 
-  renderHeaderImage = (siteData) => {
-    $(`.header-container`).append(`<img src="${siteData.headerImage}" />`)
+  renderHeaderImage = (imageUrl) => {
+    $(`.header-container`).empty()
+    $(`.header-container`).append(`<img src="${imageUrl}" alt="Header Image" />`)
   }
+
 }

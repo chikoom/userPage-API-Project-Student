@@ -17,7 +17,7 @@ class APIManager {
     loadHeaderImage = () => {
       $.ajax({
         method: "GET",
-        url: 'https://api.unsplash.com/photos/random/?client_id=wuE6t4HAHT4qH39Fo3q9Ewf_kw_9Dy_ppVrRWffOflU',
+        url: 'https://api.unsplash.com/photos/random/?collections=139396&client_id=wuE6t4HAHT4qH39Fo3q9Ewf_kw_9Dy_ppVrRWffOflU',
         dataType: 'json',
         success: data => {
           this.data.headerImage = data.urls.regular
