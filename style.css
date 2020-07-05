@@ -9,3 +9,13 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
+.container{
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 3fr 8fr 1fr;
+}
+.header-container{
+    height: 300px;
+    overflow: hidden;
+}
+

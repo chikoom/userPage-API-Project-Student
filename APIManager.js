@@ -124,8 +124,6 @@ class APIManager {
       })
     }
 
-
-
     getData(){
       return this.data
     }
