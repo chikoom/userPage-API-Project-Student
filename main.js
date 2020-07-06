@@ -17,6 +17,11 @@ $('#btn-save').on('click', function(){
   renderer.renderUserSelect(storageManager.getStoredItems())
 })
 
+$('#btn-remove').on('click', function(){
+  storageManager.removeFromStorage($('.saved-users').val())
+  renderer.renderUserSelect(storageManager.getStoredItems())
+})
+
 $('.saved-users').on('change', function(){
   console.log(storageManager.getUserData($(this).val()))
   renderer.renderScreen(storageManager.getUserData($(this).val()))
