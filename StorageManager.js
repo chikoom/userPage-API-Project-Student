@@ -13,7 +13,6 @@ class StorageManager {
     }
   }
   removeFromStorage = (username) => {
-    console.log(username)
     for(let storedUserIndex in this.usersStorage)
       if(this.usersStorage[storedUserIndex].username === username)
         this.usersStorage.splice(storedUserIndex,1)

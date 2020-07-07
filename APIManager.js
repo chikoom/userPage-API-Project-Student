@@ -50,7 +50,6 @@ class APIManager {
               image:user.picture.medium
             })
           });
-
         },
         error: (xhr, text, error) => {
           console.log(`Error loading Users Data - ${text}`)

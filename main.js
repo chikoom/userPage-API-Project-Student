@@ -23,7 +23,6 @@ $('#btn-remove').on('click', function(){
 })
 
 $('.saved-users').on('change', function(){
-  console.log(storageManager.getUserData($(this).val()))
   renderer.renderScreen(storageManager.getUserData($(this).val()))
 })
 
