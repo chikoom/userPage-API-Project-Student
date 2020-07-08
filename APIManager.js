@@ -32,18 +32,15 @@ class APIManager {
         url: 'https://randomuser.me/api/?results=7&inc=picture,name,location&nat=nl',
         dataType: 'json',
         success: data => {
-
           const resultsArray = data.results
-          const firstUserInfo = resultsArray.splice(0,1)
-
+          const firstUserInfo = resultsArray.splice(0,1)[0]
           this.data.user = {
             firstName: firstUserInfo.name.first,
             lastName: firstUserInfo.name.last,
             city: firstUserInfo.location.city,
             state: firstUserInfo.location.state,
             image: firstUserInfo.picture.large
-          }
-          
+          }       
           this.data.friends = []
           resultsArray.forEach(user => {
             this.data.friends.push({
