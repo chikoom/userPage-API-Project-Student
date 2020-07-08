@@ -3,7 +3,7 @@ class APIManager {
         this.data = {}
     }
 
-    loadAllData(renderCallback){
+    loadAllData(){
       this.loadHeaderImage()
       this.loadUsersData()
       this.loadQuote()
