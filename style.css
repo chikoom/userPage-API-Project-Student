@@ -179,3 +179,19 @@ select {
   border:0;
   padding: 5px 10px;
 }
+
+/**
+** MEDIA QUERIES
+**/
+@media screen and (max-width: 800px) {
+    .content-container {
+        display: block;
+    }
+    .texts-container{
+        display: block;
+        grid-template-columns:none;
+    }
+    .about-container{
+        margin-top:20px;
+    }
+}
