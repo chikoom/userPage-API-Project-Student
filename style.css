@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #ecf0f1;
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/**
+** STRUCTURE
+**/
+.container {
+    width: 100vw;
+}
+.content-container{
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+.main-container{
+    display: grid;
+    grid-template-rows: auto;
+    padding: 30px;
+}
+
+/**
+** BUTTONS NAV BAR
+**/
+.buttons-container {
+    height: 25px;
+}
+
+/**
+** HEADER IMAGE
+**/
+.headerImage-container {
+    max-height: 300px;
+    overflow: hidden;
+}
+.headerImage-container img {
+    width: 100%;
+}
+
+/**
+** USER DETAILS
+**/
+.user-container{
+    margin-left:50px;
+    margin-top: -30px;
+    width:400px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+}
+.user-image-wrapper{
+    margin-top: -50px;
+}
+.user-details{
+    display: grid;
+    align-content: center;
+    margin-left:10px;
+}
+.user-image{
+    width: 100%;
+    border-radius: 100px;
+    border:3px solid #fff;
+}
+.user-name {
+    font-weight: 900;
+    font-size: 1.2em;
+    border-bottom: 1px solid #ddd;
+}
+
+/**
+** FRIENDS
+**/
+.friends-container {
+    padding: 20px;
+}
+.friends-container h4 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #c5c5c5;
+    padding-left: 10px;
+}
+.friend-line{
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    vertical-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.friend-line:hover{
+    background-color: #c7d5f3;
+}
+.friend-image{
+    border-radius:50px;
+    width:30px;
+    height: 30px;
+    vertical-align: center;
+    display: inline-block;
+}
+.friend-name{
+    vertical-align: center;
+    display: inline-block;
+    margin-left:10px;
+    line-height: 30px;
+}
+
+/**
+** TEXTS - ABOUT & QOUTE
+**/
+.texts-container{
+    display: grid;
+    grid-gap:30px;
+    grid-template-columns: 5fr 7fr;
+    margin-top:50px;
+}
+.qoute-text{
+    font-size: 2.5em;
+    position: relative;
+}
+.qoutes{
+    font-weight: 900;
+}
+.about-text{
+    text-align: justify;
+    padding-right: 20px;
+}
+
+/**
+** FAVOURITES
+**/
+.favourites-container {
+    display: grid;
+    grid-template-columns: 5fr 2fr 5fr;
+    margin-top:50px;
+    text-align: center;
+}
+.favourite-image{
+    height: 200px;
+}
+.favourites-inner{
+    text-align: center;
+}
+.horizontal-divider{
+    width:2px;
+    background-color: #d3d3d3;
+    margin: 0 auto;
+}
+
+/**
+** BUTTONS
+**/
+.buttons-container{
+  text-align: center;
+}
+button {
+    outline: 0;
+    border:0;
+    cursor: pointer;
+    background-color:#a9e8ce;
+    padding: 5px 10px;
+}
+button:hover {
+  background-color:#cef1e3;
+}
+button:active {
+  background-color:#a9e8ce;
+}
+select {
+  outline: 0;
+  border:0;
+  padding: 5px 10px;
+}
+
+/**
+** MEDIA QUERIES
+**/
+@media screen and (max-width: 800px) {
+    .content-container {
+        display: block;
+    }
+    .texts-container{
+        display: block;
+        grid-template-columns:none;
+    }
+    .about-container{
+        margin-top:20px;
+    }
+    .user-container{
+        margin: auto;
+        width:400px;
+        height: auto;
+        display: block;
+        grid-template-columns: none;
+    }
+    .user-image-wrapper {
+        margin: -100px auto 0 auto;
+        width: 200px;
+    }
+    .user-details {
+        display: grid;
+        text-align:center;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .main-container{
+        padding-top: 0;
+    }
+}
